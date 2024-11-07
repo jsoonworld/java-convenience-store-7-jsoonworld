@@ -16,6 +16,7 @@ public class Application {
 
         OutputView outputView = new OutputView();
         outputView.printWelcomeMessage();
+        outputView.printCurrentProductsMessage();
 
 //        try {
 //            FileDataLoader productLoader = new ProductDataLoader();
