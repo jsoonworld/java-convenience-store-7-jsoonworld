@@ -1,5 +1,7 @@
 package store.io;
 
+import static store.exception.ErrorMessage.*;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,7 +17,7 @@ public abstract class AbstractFileDataLoader implements FileDataLoader {
 
     private void validateFileExists(String filePath) throws IOException {
         if (!Files.exists(Paths.get(filePath))) {
-            throw new IOException("[ERROR] 파일이 존재하지 않습니다");
+            throw new IOException(FILE_NOT_FOUND.getMessage());
         }
     }
 
@@ -23,7 +25,7 @@ public abstract class AbstractFileDataLoader implements FileDataLoader {
         try {
             return Files.readAllLines(Paths.get(filePath));
         } catch (IOException e) {
-            throw new IOException("[ERROR] 파일을 읽을 수 없습니다");
+            throw new IOException(FILE_READ_ERROR.getMessage());
         }
     }
 }

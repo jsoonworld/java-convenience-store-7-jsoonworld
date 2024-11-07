@@ -1,5 +1,7 @@
 package store.io;
 
+import static store.exception.ErrorMessage.*;
+
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -38,6 +40,6 @@ class PromotionDataLoaderTest {
         // when & then
         Assertions.assertThatThrownBy(() -> promotionDataLoader.loadFile(nonExistentFilePath))
                 .isInstanceOf(IOException.class)
-                .hasMessageContaining("[ERROR] 파일이 존재하지 않습니다");
+                .hasMessageContaining(FILE_NOT_FOUND.getMessage());
     }
 }
