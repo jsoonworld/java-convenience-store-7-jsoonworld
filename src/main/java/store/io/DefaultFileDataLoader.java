@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public abstract class AbstractFileDataLoader implements FileDataLoader {
+public class DefaultFileDataLoader implements FileDataLoader {
 
     @Override
     public List<String> loadFile(String filePath) throws IOException {
