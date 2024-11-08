@@ -5,6 +5,7 @@ name,price,quantity,promotion
 사이다,1000,7,null
 오렌지주스,1800,9,MD추천상품
 탄산수,1200,5,탄산2+1
+탄산수,1200,0,null
 물,500,10,null
 비타민워터,1500,6,null
 감자칩,1500,5,반짝할인
@@ -15,3 +16,4 @@ name,price,quantity,promotion
 정식도시락,6400,8,null
 컵라면,1700,1,MD추천상품
 컵라면,1700,10,null
+컵라면,111700,10,null
