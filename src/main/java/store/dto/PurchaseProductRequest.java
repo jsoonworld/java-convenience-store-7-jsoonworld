@@ -17,6 +17,14 @@ public class PurchaseProductRequest {
         return new PurchaseProductRequest(productName, quantity);
     }
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
     public PurchaseProduct toPurchaseProduct() {
         return new PurchaseProduct(
                 PurchaseProductName.of(productName),
