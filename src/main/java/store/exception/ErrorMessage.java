@@ -39,6 +39,14 @@ public enum ErrorMessage {
     EMPTY_ITEM_INCLUDED("[ERROR] 빈 항목이 포함되어 있습니다. 유효한 상품 정보를 입력해주세요."),
     PRODUCT_NAME_CANNOT_BE_NULL("[ERROR] 상품명은 null일 수 없습니다."),
     PRODUCT_NAME_CANNOT_BE_BLANK("[ERROR] 상품명은 비어있을 수 없습니다."),
+
+    INVALID_PROMOTION_FORMAT("[ERROR] 잘못된 프로모션 형식입니다: "),
+    INVALID_INTEGER_FORMAT("[ERROR] 숫자 형식이 올바르지 않습니다: "),
+    INVALID_DATE_FORMAT("[ERROR] 날짜 형식이 올바르지 않습니다: "),
+
+    PRODUCT_DATA_INITIALIZATION_ERROR("[ERROR] 상품 데이터를 초기화하는 중 오류가 발생했습니다: "),
+    PROMOTION_DATA_INITIALIZATION_ERROR("[ERROR] 프로모션 데이터를 초기화하는 중 오류가 발생했습니다."),
+
     ;
 
     private final String message;
