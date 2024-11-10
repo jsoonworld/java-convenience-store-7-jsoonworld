@@ -1,4 +1,4 @@
-package store.io;
+package store.io.input;
 
 import java.io.IOException;
 import java.util.List;

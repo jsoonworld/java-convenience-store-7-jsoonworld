@@ -3,7 +3,7 @@ package store.config;
 import static store.exception.ErrorMessage.*;
 
 import store.domain.Promotion;
-import store.io.FileDataLoader;
+import store.io.input.FileDataLoader;
 import store.repository.PromotionRepository;
 import store.util.PromotionCsvParser;
 

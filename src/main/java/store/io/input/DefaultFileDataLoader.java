@@ -1,4 +1,4 @@
-package store.io;
+package store.io.input;
 
 import static store.exception.ErrorMessage.*;
 
