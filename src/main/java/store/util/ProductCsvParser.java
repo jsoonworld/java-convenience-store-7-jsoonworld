@@ -85,8 +85,18 @@ public class ProductCsvParser {
     }
 
     private Quantity parseQuantity(List<String> fields) {
-        return Quantity.from(Integer.parseInt(fields.get(QUANTITY_INDEX)));
+        String quantityField = fields.get(QUANTITY_INDEX);
+        int quantityValue;
+
+        if ("재고 없음".equals(quantityField)) {
+            quantityValue = 0;
+        } else {
+            quantityValue = Integer.parseInt(quantityField);
+        }
+
+        return Quantity.from(quantityValue);
     }
+
 
     private PromotionName createPromotionName(List<String> fields) {
         String promotionField = getPromotionField(fields);
