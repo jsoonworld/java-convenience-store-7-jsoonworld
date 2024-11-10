@@ -8,21 +8,11 @@ import java.nio.file.*;
 
 public class FilePathLoader {
 
-    public static String getWritableFilePath(String fileName) throws IOException {
-        String resourcePath = getResourceFilePath(fileName);
-        Path sourcePath = Paths.get(resourcePath);
-        Path targetPath = Paths.get("src/main/modifiable-data/" + fileName);
-
-        Files.createDirectories(targetPath.getParent());
-
-        if (!Files.exists(targetPath)) {
-            Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-        }
-
-        return targetPath.toString();
+    public static String getFilePath(String fileName) throws IOException {
+        return getResourceFilePath(fileName);
     }
 
-    public static String getResourceFilePath(String fileName) {
+    private static String getResourceFilePath(String fileName) {
         URL resource = validateFileExists(fileName);
         return Paths.get(resource.getPath()).toString();
     }
