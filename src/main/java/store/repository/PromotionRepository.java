@@ -3,7 +3,7 @@ package store.repository;
 import store.domain.Promotion;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class PromotionRepository {
     private final List<Promotion> promotions;
@@ -12,12 +12,14 @@ public class PromotionRepository {
         this.promotions = promotions;
     }
 
-    public Optional<Promotion> findPromotionByName(String promotionName) {
+    // 특정 이름의 모든 프로모션을 가져오기
+    public List<Promotion> findPromotionsByName(String promotionName) {
         return promotions.stream()
                 .filter(promo -> promo.getName().equalsIgnoreCase(promotionName))
-                .findFirst();
+                .collect(Collectors.toList());
     }
 
+    // 모든 프로모션 반환
     public List<Promotion> getAllPromotions() {
         return promotions;
     }
