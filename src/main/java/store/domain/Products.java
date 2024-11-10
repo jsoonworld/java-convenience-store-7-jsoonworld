@@ -12,7 +12,7 @@ public class Products {
 
     public List<Product> findProductsOnPromotion() {
         return products.stream()
-                .filter(Product::hasPromotion)
+                .filter(Product::isPromotional)
                 .collect(Collectors.toList());
     }
 }

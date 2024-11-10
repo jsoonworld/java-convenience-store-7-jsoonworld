@@ -42,7 +42,7 @@ public class Product {
         return quantity.isOutOfStock();
     }
 
-    public boolean hasPromotion() {
+    public boolean isPromotional() {
         return !promotionName.isNullPromotion();
     }
 
@@ -51,10 +51,15 @@ public class Product {
     }
 
     public Optional<Promotion> getActivePromotion(Promotions promotions, LocalDate date) {
-        if (hasPromotion()) {
+        if (isPromotional()) {
             return findActivePromotion(promotions, date);
         }
         return Optional.empty();
+    }
+
+    public Product decreaseQuantity(int amount) {
+        Quantity updatedQuantity = quantity.decrease(amount);
+        return new Product(productName, price, updatedQuantity, promotionName);
     }
 
     @Override
