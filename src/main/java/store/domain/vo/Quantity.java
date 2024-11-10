@@ -1,5 +1,7 @@
 package store.domain.vo;
 
+import store.exception.ErrorMessage;
+
 import static store.exception.ErrorMessage.*;
 
 import java.util.Objects;
@@ -24,6 +26,13 @@ public class Quantity {
 
     public boolean isOutOfStock() {
         return amount != null && amount == MINIMUM_QUANTITY;
+    }
+
+    public Quantity decrease(int quantityToDecrease) {
+        if (this.amount < quantityToDecrease) {
+            throw new IllegalArgumentException(INSUFFICIENT_STOCK.getMessage());
+        }
+        return new Quantity(this.amount - quantityToDecrease);
     }
 
     private void validate(Integer amount) {
