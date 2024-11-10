@@ -32,7 +32,8 @@ public class ProductRepository {
     public Product findByNameAndPromotion(String productName, String promotionName) {
         return products.stream()
                 .filter(product -> product.getName().equals(productName) &&
-                        (product.getPromotionName().equals(promotionName) || promotionName.equals("null")))
+                        ((promotionName.equals("null") && (product.getPromotionName() == null || product.getPromotionName().equals("null"))) ||
+                                (!promotionName.equals("null") && promotionName.equals(product.getPromotionName()))))
                 .findFirst()
                 .orElse(null);
     }
