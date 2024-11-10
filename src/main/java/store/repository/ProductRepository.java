@@ -5,7 +5,6 @@ import store.domain.vo.Price;
 import store.domain.vo.ProductName;
 import store.domain.vo.PromotionName;
 import store.domain.vo.Quantity;
-import store.io.output.ProductStockSaver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +12,9 @@ import java.util.stream.Collectors;
 
 public class ProductRepository {
     private final List<Product> products;
-    private final ProductStockSaver productStockSaver;
 
-    public ProductRepository(List<Product> products, ProductStockSaver productStockSaver) {
+    public ProductRepository(List<Product> products) {
         this.products = new ArrayList<>(products);
-        this.productStockSaver = productStockSaver;
     }
 
     public List<Product> getAllProducts() {
@@ -78,18 +75,15 @@ public class ProductRepository {
                 products.set(index, updatedProduct);
             }
         }
-        productStockSaver.saveProductStock(products);
     }
 
     private void addProduct(Product newProduct) {
         products.add(newProduct);
-        productStockSaver.saveProductStock(products); // 추가된 상품을 즉시 저장
     }
 
     public void addProductAtIndex(int index, Product newProduct) {
         if (index >= 0 && index <= products.size()) {
             products.add(index, newProduct);  // 원하는 위치에 추가
-            productStockSaver.saveProductStock(products);  // 추가된 상품을 즉시 저장
         } else {
             // 유효하지 않은 인덱스일 경우 예외를 던지거나, 다른 처리를 할 수 있습니다.
             System.out.println("유효하지 않은 인덱스입니다. 상품 추가 실패.");
