@@ -1,25 +1,54 @@
 package store.repository;
 
-import static store.exception.ErrorMessage.*;
-
 import store.domain.Product;
+import store.domain.vo.Price;
+import store.domain.vo.ProductName;
+import store.domain.vo.PromotionName;
+import store.domain.vo.Quantity;
 import store.io.output.ProductStockSaver;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductRepository {
-    private static final int PRODUCT_NOT_FOUND_INDEX = -1;
-
     private final List<Product> products;
     private final ProductStockSaver productStockSaver;
 
     public ProductRepository(List<Product> products, ProductStockSaver productStockSaver) {
-        this.products = products;
+        this.products = new ArrayList<>(products);
         this.productStockSaver = productStockSaver;
     }
 
     public List<Product> getAllProducts() {
-        return products;
+        ensureRegularProducts();  // 상품 목록을 반환하기 전에 프로모션 상품에 대한 일반 상품 추가
+        return new ArrayList<>(products);
+    }
+
+    private void ensureRegularProducts() {
+        // 프로모션 상품 목록 필터링
+        List<Product> promotionalProducts = products.stream()
+                .filter(product -> product.getPromotionName() != null && !product.getPromotionName().equals("null"))
+                .collect(Collectors.toList());
+
+        // 프로모션 상품을 처리 후, 일반 상품을 추가
+        for (Product promotionalProduct : promotionalProducts) {
+            // 해당 프로모션에 대한 일반 상품이 없다면 추가
+            if (findByNameAndPromotion(promotionalProduct.getName(), "null") == null) {
+                Product regularProduct = Product.of(
+                        ProductName.from(promotionalProduct.getName()),
+                        Price.from(promotionalProduct.getPriceValue()),
+                        Quantity.from(0), // "재고 없음"을 나타내기 위해 0으로 설정
+                        PromotionName.from("null")
+                );
+
+                // 일반 상품을 프로모션 상품 뒤에 추가
+                int promoIndex = products.indexOf(promotionalProduct);
+                if (promoIndex != -1) {
+                    addProductAtIndex(promoIndex + 1, regularProduct);
+                }
+            }
+        }
     }
 
     public Product findProductByName(String productName) {
@@ -42,13 +71,28 @@ public class ProductRepository {
         Product existingProduct = findByNameAndPromotion(updatedProduct.getName(), updatedProduct.getPromotionName());
 
         if (existingProduct == null) {
-            throw new RuntimeException(PRODUCT_SAVE_FAILED.getMessage());
-        }
-
-        int index = products.indexOf(existingProduct);
-        if (index != PRODUCT_NOT_FOUND_INDEX) {
-            products.set(index, updatedProduct);
+            addProduct(updatedProduct);
+        } else {
+            int index = products.indexOf(existingProduct);
+            if (index != -1) {
+                products.set(index, updatedProduct);
+            }
         }
         productStockSaver.saveProductStock(products);
+    }
+
+    private void addProduct(Product newProduct) {
+        products.add(newProduct);
+        productStockSaver.saveProductStock(products); // 추가된 상품을 즉시 저장
+    }
+
+    public void addProductAtIndex(int index, Product newProduct) {
+        if (index >= 0 && index <= products.size()) {
+            products.add(index, newProduct);  // 원하는 위치에 추가
+            productStockSaver.saveProductStock(products);  // 추가된 상품을 즉시 저장
+        } else {
+            // 유효하지 않은 인덱스일 경우 예외를 던지거나, 다른 처리를 할 수 있습니다.
+            System.out.println("유효하지 않은 인덱스입니다. 상품 추가 실패.");
+        }
     }
 }
