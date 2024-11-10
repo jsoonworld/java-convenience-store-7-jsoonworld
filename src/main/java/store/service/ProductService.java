@@ -45,9 +45,16 @@ public class ProductService {
             }
 
             int requestedQuantity = request.getQuantity();
+            System.out.println("[INFO] 요청된 상품: " + product.getName() + ", 요청 수량: " + requestedQuantity);
+
 
             Product promotionalProduct = productRepository.findByNameAndPromotion(product.getName(), product.getPromotionName());
             Product regularProduct = productRepository.findByNameAndPromotion(product.getName(), "null");
+
+            // 프로모션 무료 증정 개수 추출
+            List<Promotion> promotions = promotionService.findPromotionsByName(product.getPromotionName());
+            int freeQuantity = promotions.get(0).getFreeQuantity();
+
 
             Product productToUpdate = promotionalProduct;
             int remainingQuantity = requestedQuantity;
@@ -57,8 +64,8 @@ public class ProductService {
                 if (validPromotion.isPresent()) {
                     int promoStock = promotionalProduct.getQuantityValue();
 
-                    if (promoStock >= remainingQuantity) {
-                        productToUpdate = promotionalProduct.decreaseQuantity(remainingQuantity);
+                    if (promoStock >= remainingQuantity+freeQuantity) {
+                        productToUpdate = promotionalProduct.decreaseQuantity(remainingQuantity+freeQuantity);
                         remainingQuantity = 0;
                     } else {
                         productToUpdate = promotionalProduct.decreaseQuantity(promoStock);
@@ -89,4 +96,3 @@ public class ProductService {
         }
     }
 }
-
