@@ -1,9 +1,8 @@
 package store.service;
 
+import camp.nextstep.edu.missionutils.DateTimes;
 import store.domain.Promotion;
 import store.repository.PromotionRepository;
-
-import camp.nextstep.edu.missionutils.DateTimes;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -19,7 +18,7 @@ public class PromotionService {
         if (promotionName == null || promotionName.equalsIgnoreCase("null")) {
             return Optional.empty();
         }
-        LocalDate today = DateTimes.now().toLocalDate();
+        LocalDate today = LocalDate.from(DateTimes.now());
         return promotionRepository.findPromotionByName(promotionName)
                 .filter(promo -> promo.isActiveOn(today));
     }
