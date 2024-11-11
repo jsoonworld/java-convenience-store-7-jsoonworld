@@ -1,5 +1,9 @@
 package store.view;
 
+import store.dto.ReceiptRequest;
+import store.dto.ReceiptResponse;
+import store.util.ReceiptFormatter;
+
 import java.util.List;
 
 public class OutputView {
@@ -28,5 +32,10 @@ public class OutputView {
 
     public void printMembershipPrompt() {
         System.out.println(MEMBERSHIP_PROMPT);
+    }
+
+    public void printReceipt(ReceiptRequest request, ReceiptResponse response) {
+        String formattedReceipt = ReceiptFormatter.formatReceipt(request, response);
+        System.out.println(formattedReceipt);
     }
 }
