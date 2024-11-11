@@ -23,22 +23,30 @@ public class PromotionAdjuster {
         int buyQuantity = dto.getBuyQuantity();
 
         if (requestedQuantity >= buyQuantity) {
-            int unmetPromotionQuantity = requestedQuantity - buyQuantity;
-            PromotionConfirmationInput confirmationInput;
-            while (true) {
-                try {
-                    outputView.printPromotionPrompt(request.getProductName());
-                    confirmationInput = inputView.readPromotionConfirmation();
-                    if (CONFIRMATION_YES.equals(confirmationInput.getUserResponse())) {
-                        return updateWithAdditionalPurchase(dto, request, unmetPromotionQuantity);
-                    }
-                } catch (IllegalArgumentException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
+            return processAdditionalPurchase(request, dto, requestedQuantity - buyQuantity);
         }
         return dto;
     }
+
+    private PromotionCalculationData processAdditionalPurchase(PromotionRequest request, PromotionCalculationData dto, int unmetPromotionQuantity) {
+        while (true) {
+            if (confirmAdditionalPurchase(request)) {
+                return updateWithAdditionalPurchase(dto, request, unmetPromotionQuantity);
+            }
+        }
+    }
+
+    private boolean confirmAdditionalPurchase(PromotionRequest request) {
+        try {
+            outputView.printPromotionPrompt(request.getProductName());
+            PromotionConfirmationInput confirmationInput = inputView.readPromotionConfirmation();
+            return CONFIRMATION_YES.equals(confirmationInput.getUserResponse());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
     private PromotionCalculationData updateWithAdditionalPurchase(PromotionCalculationData dto, PromotionRequest request, int unmetPromotionQuantity) {
         int updatedFinalQuantity = dto.getFinalQuantity() + unmetPromotionQuantity;
         int freeItems = (updatedFinalQuantity / dto.getBuyQuantity()) * dto.getFreeQuantity();

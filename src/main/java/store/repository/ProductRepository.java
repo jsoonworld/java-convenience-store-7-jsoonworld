@@ -27,6 +27,7 @@ public class ProductRepository {
 
     public List<Product> getAllProducts() {
         ensureRegularProducts();
+        removePromotionProducts();
         return new ArrayList<>(products);
     }
 
@@ -130,10 +131,14 @@ public class ProductRepository {
         products.add(newProduct);
     }
 
-    public void addProductAtIndex(int index, Product newProduct) {
+    private void addProductAtIndex(int index, Product newProduct) {
         if (index < 0 || index > products.size()) {
             throw new IllegalArgumentException(INVALID_INDEX.getMessage());
         }
         products.add(index, newProduct);
+    }
+
+    private void removePromotionProducts() {
+        products.removeIf(product -> product.getPromotionName() != null && product.getPromotionName().equals("Promotion"));
     }
 }
