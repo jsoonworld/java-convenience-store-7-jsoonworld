@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import store.domain.PurchaseProduct;
+import store.domain.purchase.PurchaseProduct;
 import store.domain.vo.PurchaseProductName;
 import store.domain.vo.PurchaseQuantity;
 import store.dto.request.purchase.PurchaseProductRequest;

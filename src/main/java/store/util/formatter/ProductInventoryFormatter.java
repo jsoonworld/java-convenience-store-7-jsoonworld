@@ -1,6 +1,6 @@
 package store.util.formatter;
 
-import store.domain.Product;
+import store.domain.product.Product;
 
 import java.util.List;
 import java.util.stream.Collectors;

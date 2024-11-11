@@ -1,10 +1,10 @@
 package store.service.promotion;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.request.promotion.PromotionRequest;
 import store.dto.response.promotion.PromotionResponse;
 import store.repository.ProductRepository;
-import store.domain.Promotion;
+import store.domain.promotion.Promotion;
 import store.view.InputView;
 import store.view.OutputView;
 

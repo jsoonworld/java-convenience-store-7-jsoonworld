@@ -1,6 +1,6 @@
 package store.dto.init;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.request.promotion.PromotionRequest;
 
 import java.util.ArrayList;

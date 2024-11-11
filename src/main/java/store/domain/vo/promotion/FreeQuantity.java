@@ -1,4 +1,4 @@
-package store.domain.vo;
+package store.domain.vo.promotion;
 
 import static store.exception.ErrorMessage.NEGATIVE_FREE_QUANTITY;
 

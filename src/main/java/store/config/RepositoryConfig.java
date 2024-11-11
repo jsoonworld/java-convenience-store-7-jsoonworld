@@ -1,7 +1,7 @@
 package store.config;
 
-import store.domain.Product;
-import store.domain.Promotion;
+import store.domain.product.Product;
+import store.domain.promotion.Promotion;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
 import store.io.input.FileDataLoader;

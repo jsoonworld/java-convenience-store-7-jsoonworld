@@ -1,6 +1,6 @@
 package store.controller;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.service.discount.MembershipDiscountService;
 import store.service.receipt.ReceiptService;
 import store.service.receipt.ReceiptCalculationService;

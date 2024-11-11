@@ -1,6 +1,6 @@
 package store.dto.response;
 
-import store.domain.Product;
+import store.domain.product.Product;
 
 public class StockResponse {
     private final int remainingQuantity;

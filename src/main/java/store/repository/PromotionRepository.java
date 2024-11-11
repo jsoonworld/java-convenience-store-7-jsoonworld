@@ -1,6 +1,6 @@
 package store.repository;
 
-import store.domain.Promotion;
+import store.domain.promotion.Promotion;
 
 import java.util.List;
 import java.util.stream.Collectors;

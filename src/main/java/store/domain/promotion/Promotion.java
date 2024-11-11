@@ -1,12 +1,11 @@
-package store.domain;
+package store.domain.promotion;
 
 import store.domain.vo.PromotionName;
-import store.domain.vo.RequiredPurchaseQuantity;
-import store.domain.vo.FreeQuantity;
-import store.domain.vo.PromotionPeriod;
+import store.domain.vo.promotion.RequiredPurchaseQuantity;
+import store.domain.vo.promotion.FreeQuantity;
+import store.domain.vo.promotion.PromotionPeriod;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Promotion {

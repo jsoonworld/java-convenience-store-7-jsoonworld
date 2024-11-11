@@ -1,4 +1,4 @@
-package store.domain;
+package store.domain.purchase;
 
 import store.domain.vo.PurchaseProductName;
 import store.domain.vo.PurchaseQuantity;

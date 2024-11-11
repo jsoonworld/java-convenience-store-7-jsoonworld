@@ -1,6 +1,6 @@
 package store.dto.request;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import java.util.List;
 
 public class ProductSaveRequest {

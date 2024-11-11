@@ -1,6 +1,6 @@
 package store.controller;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.request.StockRequest;
 import store.dto.response.StockResponse;
 import store.dto.response.StockResult;

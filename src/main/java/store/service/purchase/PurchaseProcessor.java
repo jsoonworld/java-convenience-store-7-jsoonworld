@@ -2,7 +2,7 @@ package store.service.purchase;
 
 import store.controller.PromotionController;
 import store.controller.StockController;
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.request.promotion.PromotionPurchaseRequest;
 import store.dto.request.promotion.PromotionRequest;
 import store.dto.request.purchase.PurchaseProductRequest;

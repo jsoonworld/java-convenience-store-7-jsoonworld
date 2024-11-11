@@ -3,7 +3,7 @@ package store.service.promotion;
 import static store.exception.ErrorMessage.*;
 
 import camp.nextstep.edu.missionutils.DateTimes;
-import store.domain.Promotion;
+import store.domain.promotion.Promotion;
 import store.repository.PromotionRepository;
 
 import java.time.LocalDate;

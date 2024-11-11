@@ -1,6 +1,6 @@
 package store.dto.request.purchase;
 
-import store.domain.PurchaseProduct;
+import store.domain.purchase.PurchaseProduct;
 import store.domain.vo.PurchaseProductName;
 import store.domain.vo.PurchaseQuantity;
 

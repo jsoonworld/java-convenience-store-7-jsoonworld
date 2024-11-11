@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import store.domain.Product;
+import store.domain.product.Product;
 import store.util.parser.ProductCsvParser;
 
 import java.util.List;

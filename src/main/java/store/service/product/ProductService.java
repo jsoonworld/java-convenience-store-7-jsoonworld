@@ -3,7 +3,7 @@ package store.service.product;
 import static store.exception.ErrorMessage.*;
 
 import store.controller.CompletePurchaseController;
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.init.PurchaseProcessData;
 import store.dto.request.purchase.PurchaseProductRequest;
 import store.dto.response.PurchaseProcessingResult;

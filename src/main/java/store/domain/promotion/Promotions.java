@@ -1,7 +1,6 @@
-package store.domain;
+package store.domain.promotion;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

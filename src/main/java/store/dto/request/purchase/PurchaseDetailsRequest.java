@@ -1,6 +1,6 @@
 package store.dto.request.purchase;
 
-import store.domain.Product;
+import store.domain.product.Product;
 
 public class PurchaseDetailsRequest {
     private final String productName;

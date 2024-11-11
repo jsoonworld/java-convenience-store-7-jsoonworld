@@ -2,8 +2,8 @@ package store.service.promotion;
 
 import static store.exception.ErrorMessage.EXCEEDS_STOCK;
 
-import store.domain.Product;
-import store.domain.Promotion;
+import store.domain.product.Product;
+import store.domain.promotion.Promotion;
 import store.dto.request.promotion.PromotionRequest;
 import store.dto.request.promotion.PromotionPurchaseRequest;
 import store.repository.ProductRepository;

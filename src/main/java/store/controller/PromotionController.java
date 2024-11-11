@@ -1,6 +1,6 @@
 package store.controller;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.request.promotion.PromotionRequest;
 import store.dto.response.promotion.PromotionResponse;
 import store.dto.response.promotion.PromotionResult;

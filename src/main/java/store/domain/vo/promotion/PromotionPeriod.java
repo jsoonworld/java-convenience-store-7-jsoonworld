@@ -1,9 +1,8 @@
-package store.domain.vo;
+package store.domain.vo.promotion;
 
 import static store.exception.ErrorMessage.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class PromotionPeriod {
     private final LocalDate startDate;

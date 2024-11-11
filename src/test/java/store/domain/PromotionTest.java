@@ -5,10 +5,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import store.domain.promotion.Promotion;
 import store.domain.vo.PromotionName;
-import store.domain.vo.RequiredPurchaseQuantity;
-import store.domain.vo.FreeQuantity;
-import store.domain.vo.PromotionPeriod;
+import store.domain.vo.promotion.RequiredPurchaseQuantity;
+import store.domain.vo.promotion.FreeQuantity;
+import store.domain.vo.promotion.PromotionPeriod;
 
 import java.time.LocalDate;
 

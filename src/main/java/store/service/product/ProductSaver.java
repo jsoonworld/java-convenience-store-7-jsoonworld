@@ -1,6 +1,6 @@
 package store.service.product;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.dto.request.ProductSaveRequest;
 import store.repository.ProductRepository;
 

@@ -2,7 +2,7 @@ package store.repository;
 
 import static store.exception.ErrorMessage.*;
 
-import store.domain.Product;
+import store.domain.product.Product;
 import store.domain.vo.Price;
 import store.domain.vo.ProductName;
 import store.domain.vo.PromotionName;

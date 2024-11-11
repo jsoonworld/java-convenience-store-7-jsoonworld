@@ -2,11 +2,11 @@ package store.util.parser;
 
 import static store.exception.ErrorMessage.*;
 
-import store.domain.Promotion;
+import store.domain.promotion.Promotion;
 import store.domain.vo.PromotionName;
-import store.domain.vo.RequiredPurchaseQuantity;
-import store.domain.vo.FreeQuantity;
-import store.domain.vo.PromotionPeriod;
+import store.domain.vo.promotion.RequiredPurchaseQuantity;
+import store.domain.vo.promotion.FreeQuantity;
+import store.domain.vo.promotion.PromotionPeriod;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;

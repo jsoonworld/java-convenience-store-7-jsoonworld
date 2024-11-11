@@ -1,12 +1,13 @@
-package store.domain;
+package store.domain.product;
 
+import store.domain.promotion.Promotion;
+import store.domain.promotion.Promotions;
 import store.domain.vo.ProductName;
 import store.domain.vo.Price;
 import store.domain.vo.PromotionName;
 import store.domain.vo.Quantity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Optional;
 

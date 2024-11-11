@@ -1,6 +1,6 @@
 package store.dto.response.promotion;
 
-import store.domain.Product;
+import store.domain.product.Product;
 
 import java.util.List;
 

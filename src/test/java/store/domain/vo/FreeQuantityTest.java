@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import store.domain.vo.promotion.FreeQuantity;
 import store.exception.ErrorMessage;
 
 @DisplayName("FreeQuantity 클래스 테스트")
