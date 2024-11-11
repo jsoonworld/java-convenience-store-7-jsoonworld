@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import store.dto.request.PurchaseInput;
+import store.dto.request.purchase.PurchaseInput;
 import store.exception.ErrorMessage;
 
 class PurchaseInputTest {

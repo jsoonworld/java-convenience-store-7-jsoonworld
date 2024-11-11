@@ -1,4 +1,4 @@
-package store.dto.request;
+package store.dto.request.promotion;
 
 public class PromotionConfirmationInput {
 

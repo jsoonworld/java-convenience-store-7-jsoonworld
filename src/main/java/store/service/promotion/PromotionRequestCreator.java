@@ -4,8 +4,8 @@ import static store.exception.ErrorMessage.EXCEEDS_STOCK;
 
 import store.domain.Product;
 import store.domain.Promotion;
-import store.dto.request.PromotionRequest;
-import store.dto.request.PromotionPurchaseRequest;
+import store.dto.request.promotion.PromotionRequest;
+import store.dto.request.promotion.PromotionPurchaseRequest;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
 

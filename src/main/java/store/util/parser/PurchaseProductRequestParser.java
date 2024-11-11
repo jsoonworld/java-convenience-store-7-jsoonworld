@@ -2,7 +2,7 @@ package store.util.parser;
 
 import static store.exception.ErrorMessage.*;
 
-import store.dto.request.PurchaseProductRequest;
+import store.dto.request.purchase.PurchaseProductRequest;
 
 import java.util.Arrays;
 import java.util.List;

@@ -6,7 +6,7 @@ import store.domain.vo.ProductName;
 import store.domain.vo.PromotionName;
 import store.domain.vo.Quantity;
 import store.dto.init.PromotionCalculationData;
-import store.dto.request.PromotionRequest;
+import store.dto.request.promotion.PromotionRequest;
 
 import java.util.List;
 

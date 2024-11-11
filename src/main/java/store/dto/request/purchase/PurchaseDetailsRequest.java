@@ -1,4 +1,4 @@
-package store.dto.request;
+package store.dto.request.purchase;
 
 import store.domain.Product;
 

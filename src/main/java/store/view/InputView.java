@@ -1,10 +1,10 @@
 package store.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import store.dto.request.AdditionalPurchaseInput;
+import store.dto.request.purchase.AdditionalPurchaseInput;
 import store.dto.request.MembershipDiscountInput;
-import store.dto.request.PromotionConfirmationInput;
-import store.dto.request.PurchaseInput;
+import store.dto.request.promotion.PromotionConfirmationInput;
+import store.dto.request.purchase.PurchaseInput;
 
 public class InputView {
 

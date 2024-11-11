@@ -1,8 +1,8 @@
 package store.service.promotion;
 
 import store.domain.Product;
-import store.dto.request.PromotionRequest;
-import store.dto.response.PromotionResponse;
+import store.dto.request.promotion.PromotionRequest;
+import store.dto.response.promotion.PromotionResponse;
 import store.repository.ProductRepository;
 import store.domain.Promotion;
 import store.view.InputView;

@@ -1,6 +1,6 @@
 package store.domain;
 
-import store.dto.request.PurchaseProductRequest;
+import store.dto.request.purchase.PurchaseProductRequest;
 
 import java.util.Collections;
 import java.util.List;

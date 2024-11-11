@@ -1,4 +1,4 @@
-package store.dto.response;
+package store.dto.response.promotion;
 
 import store.domain.Product;
 

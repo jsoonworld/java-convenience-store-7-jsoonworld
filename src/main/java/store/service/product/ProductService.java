@@ -5,7 +5,7 @@ import static store.exception.ErrorMessage.*;
 import store.controller.CompletePurchaseController;
 import store.domain.Product;
 import store.dto.init.PurchaseProcessData;
-import store.dto.request.PurchaseProductRequest;
+import store.dto.request.purchase.PurchaseProductRequest;
 import store.dto.response.PurchaseProcessingResult;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;

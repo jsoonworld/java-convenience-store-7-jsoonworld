@@ -1,7 +1,7 @@
 package store.util.formatter;
 
 import store.domain.Product;
-import store.dto.request.PurchaseDetailsRequest;
+import store.dto.request.purchase.PurchaseDetailsRequest;
 
 public class PurchaseDetailsFormatter {
 

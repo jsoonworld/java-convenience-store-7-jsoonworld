@@ -1,8 +1,8 @@
 package store.controller;
 
-import store.dto.request.AdditionalPurchaseInput;
-import store.dto.request.PurchaseInput;
-import store.dto.request.PurchaseProductRequest;
+import store.dto.request.purchase.AdditionalPurchaseInput;
+import store.dto.request.purchase.PurchaseInput;
+import store.dto.request.purchase.PurchaseProductRequest;
 import store.view.InputView;
 import store.view.OutputView;
 import store.util.parser.PurchaseProductRequestParser;

@@ -1,9 +1,9 @@
 package store.controller;
 
 import store.domain.Product;
-import store.dto.request.PromotionRequest;
-import store.dto.response.PromotionResponse;
-import store.dto.response.PromotionResult;
+import store.dto.request.promotion.PromotionRequest;
+import store.dto.response.promotion.PromotionResponse;
+import store.dto.response.promotion.PromotionResult;
 import store.service.promotion.PromotionHandler;
 
 import java.util.List;

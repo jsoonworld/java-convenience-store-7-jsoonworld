@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import store.dto.request.PurchaseProductRequest;
+import store.dto.request.purchase.PurchaseProductRequest;
 import store.util.parser.PurchaseProductRequestParser;
 
 import java.util.List;
