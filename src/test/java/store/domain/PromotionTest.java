@@ -26,7 +26,10 @@ class PromotionTest {
                     PromotionName.from("탄산2+1"),
                     RequiredPurchaseQuantity.from(2),
                     FreeQuantity.from(1),
-                    PromotionPeriod.of(LocalDate.of(2024, 1, 1), LocalDate.of(2024, 12, 31))
+                    PromotionPeriod.of(
+                            LocalDate.of(2024, 1, 1),  // 2024년 1월 1일
+                            LocalDate.of(2024, 12, 31)  // 2024년 12월 31일
+                    )
             );
 
             assertThat(promotion).isNotNull();
@@ -42,7 +45,10 @@ class PromotionTest {
                     PromotionName.from("탄산2+1"),
                     RequiredPurchaseQuantity.from(2),
                     FreeQuantity.from(1),
-                    PromotionPeriod.of(LocalDate.of(2024, 1, 1), LocalDate.of(2024, 12, 31))
+                    PromotionPeriod.of(
+                            LocalDate.of(2024, 1, 1),
+                            LocalDate.of(2024, 12, 31)
+                    )
             );
 
             LocalDate activeDate = LocalDate.of(2024, 6, 15);
@@ -56,7 +62,10 @@ class PromotionTest {
                     PromotionName.from("탄산2+1"),
                     RequiredPurchaseQuantity.from(2),
                     FreeQuantity.from(1),
-                    PromotionPeriod.of(LocalDate.of(2024, 1, 1), LocalDate.of(2024, 12, 31))
+                    PromotionPeriod.of(
+                            LocalDate.of(2024, 1, 1),
+                            LocalDate.of(2024, 12, 31)
+                    )
             );
 
             LocalDate inactiveDate = LocalDate.of(2025, 1, 1);

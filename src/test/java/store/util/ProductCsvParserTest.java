@@ -42,7 +42,7 @@ class ProductCsvParserTest {
                 assertThat(product.getName()).isEqualTo("사이다");
                 assertThat(product.getPriceValue()).isEqualTo(1000);
                 assertThat(product.getQuantityValue()).isEqualTo(8);
-                assertThat(product.hasPromotion()).isFalse();
+                assertThat(product.isPromotional()).isFalse();
             });
         }
 
@@ -61,7 +61,7 @@ class ProductCsvParserTest {
                 assertThat(product.getName()).isEqualTo("물");
                 assertThat(product.getPriceValue()).isEqualTo(500);
                 assertThat(product.getQuantityValue()).isEqualTo(10);
-                assertThat(product.hasPromotion()).isFalse();
+                assertThat(product.isPromotional()).isFalse();
             });
         }
 
@@ -80,7 +80,7 @@ class ProductCsvParserTest {
                 assertThat(product.getName()).isEqualTo("물");
                 assertThat(product.getPriceValue()).isEqualTo(500);
                 assertThat(product.getQuantityValue()).isEqualTo(10);
-                assertThat(product.hasPromotion()).isFalse();
+                assertThat(product.isPromotional()).isFalse();
             });
         }
     }

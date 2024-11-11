@@ -31,7 +31,7 @@ class ProductTest {
             assertThat(product.getName()).isEqualTo("콜라");
             assertThat(product.getPriceValue()).isEqualTo(1000);
             assertThat(product.getQuantityValue()).isEqualTo(10);
-            assertThat(product.hasPromotion()).isTrue();
+            assertThat(product.isPromotional()).isTrue();
         }
 
         @Test
@@ -44,7 +44,7 @@ class ProductTest {
                     PromotionName.from("null")
             );
 
-            assertThat(product.hasPromotion()).isFalse();
+            assertThat(product.isPromotional()).isFalse();
         }
 
         @Test

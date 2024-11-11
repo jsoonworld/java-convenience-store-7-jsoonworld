@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import store.domain.PurchaseProduct;
 import store.domain.vo.PurchaseProductName;
 import store.domain.vo.PurchaseQuantity;
+import store.dto.request.PurchaseProductRequest;
 
 class PurchaseProductRequestTest {
 

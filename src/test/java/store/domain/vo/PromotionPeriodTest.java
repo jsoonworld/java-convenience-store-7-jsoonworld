@@ -20,13 +20,13 @@ class PromotionPeriodTest {
         @Test
         @DisplayName("유효한 시작일과 종료일로 PromotionPeriod 객체를 생성할 수 있다")
         void createPromotionPeriodWithValidDates() {
-            LocalDate startDate = LocalDate.of(2024, 1, 1);
-            LocalDate endDate = LocalDate.of(2024, 12, 31);
+            LocalDate startDate = LocalDate.of(2024, 1, 1);  // 2024년 1월 1일
+            LocalDate endDate = LocalDate.of(2024, 12, 31);  // 2024년 12월 31일
 
             PromotionPeriod period = PromotionPeriod.of(startDate, endDate);
 
             assertThat(period).isNotNull();
-            assertThat(period.isWithinPeriod(LocalDate.of(2024, 6, 15))).isTrue();
+            assertThat(period.isWithinPeriod(LocalDate.of(2024, 6, 15))).isTrue();  // 2024년 6월 15일
         }
 
         @Test

@@ -7,6 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import store.io.input.DefaultFileDataLoader;
+import store.io.input.FileDataLoader;
 
 import java.io.IOException;
 import java.nio.file.Files;
