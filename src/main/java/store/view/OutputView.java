@@ -2,7 +2,7 @@ package store.view;
 
 import store.dto.request.ReceiptRequest;
 import store.dto.response.ReceiptResponse;
-import store.util.ReceiptFormatter;
+import store.util.formatter.ReceiptFormatter;
 
 import java.util.List;
 

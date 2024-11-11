@@ -5,7 +5,7 @@ import store.dto.request.PurchaseInput;
 import store.dto.request.PurchaseProductRequest;
 import store.view.InputView;
 import store.view.OutputView;
-import store.util.PurchaseProductRequestParser;
+import store.util.parser.PurchaseProductRequestParser;
 import store.validation.PurchaseInputValidator;
 
 import java.util.List;

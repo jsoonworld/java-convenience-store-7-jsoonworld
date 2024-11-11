@@ -1,4 +1,4 @@
-package store.util;
+package store.util.formatter;
 
 import store.dto.request.ReceiptRequest;
 import store.dto.response.ReceiptResponse;

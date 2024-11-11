@@ -3,7 +3,7 @@ package store.controller;
 import store.domain.Product;
 import store.dto.request.PurchaseProductRequest;
 import store.service.product.ProductService;
-import store.util.ProductInventoryFormatter;
+import store.util.formatter.ProductInventoryFormatter;
 
 import java.util.List;
 

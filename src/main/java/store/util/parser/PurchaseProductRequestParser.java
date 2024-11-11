@@ -1,4 +1,4 @@
-package store.util;
+package store.util.parser;
 
 import static store.exception.ErrorMessage.*;
 

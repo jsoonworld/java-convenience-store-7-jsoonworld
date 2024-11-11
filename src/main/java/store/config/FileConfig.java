@@ -2,7 +2,7 @@ package store.config;
 
 import store.io.input.DefaultFileDataLoader;
 import store.io.input.FileDataLoader;
-import store.util.FilePathLoader;
+import store.util.file.FilePathLoader;
 
 import java.io.IOException;
 

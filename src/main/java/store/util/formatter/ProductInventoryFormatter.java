@@ -1,4 +1,4 @@
-package store.util;
+package store.util.formatter;
 
 import store.domain.Product;
 

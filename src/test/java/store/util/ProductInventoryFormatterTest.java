@@ -9,6 +9,7 @@ import store.domain.vo.Price;
 import store.domain.vo.ProductName;
 import store.domain.vo.PromotionName;
 import store.domain.vo.Quantity;
+import store.util.formatter.ProductInventoryFormatter;
 
 import java.util.List;
 

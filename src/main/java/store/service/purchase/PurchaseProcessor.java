@@ -14,7 +14,7 @@ import store.repository.PromotionRepository;
 import store.service.product.StockService;
 import store.service.promotion.PromotionHandler;
 import store.service.promotion.PromotionRequestCreator;
-import store.util.PurchaseDetailsFormatter;
+import store.util.formatter.PurchaseDetailsFormatter;
 
 import java.util.ArrayList;
 import java.util.List;

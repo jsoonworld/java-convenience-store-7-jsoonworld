@@ -5,8 +5,8 @@ import store.domain.Promotion;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
 import store.io.input.FileDataLoader;
-import store.util.ProductCsvParser;
-import store.util.PromotionCsvParser;
+import store.util.parser.ProductCsvParser;
+import store.util.parser.PromotionCsvParser;
 
 import java.io.IOException;
 import java.util.List;

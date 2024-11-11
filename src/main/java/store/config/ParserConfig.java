@@ -1,7 +1,7 @@
 package store.config;
 
-import store.util.ProductCsvParser;
-import store.util.PromotionCsvParser;
+import store.util.parser.ProductCsvParser;
+import store.util.parser.PromotionCsvParser;
 
 public class ParserConfig {
     private final ProductCsvParser productCsvParser;

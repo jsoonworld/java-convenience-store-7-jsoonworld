@@ -1,4 +1,4 @@
-package store.util;
+package store.util.file;
 
 import static store.exception.ErrorMessage.*;
 
