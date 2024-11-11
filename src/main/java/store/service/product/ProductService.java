@@ -1,4 +1,4 @@
-package store.service;
+package store.service.product;
 
 import static store.exception.ErrorMessage.*;
 
@@ -9,6 +9,9 @@ import store.dto.request.PurchaseProductRequest;
 import store.dto.response.PurchaseProcessingResult;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
+import store.service.promotion.PromotionHandler;
+import store.service.promotion.PromotionService;
+import store.service.purchase.PurchaseProcessor;
 
 import java.util.List;
 

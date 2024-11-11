@@ -2,7 +2,7 @@ package store.controller;
 
 import store.domain.Product;
 import store.dto.request.PurchaseProductRequest;
-import store.service.ProductService;
+import store.service.product.ProductService;
 import store.util.ProductInventoryFormatter;
 
 import java.util.List;

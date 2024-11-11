@@ -1,4 +1,4 @@
-package store.service;
+package store.service.product;
 
 import store.domain.Product;
 import store.dto.request.StockRequest;

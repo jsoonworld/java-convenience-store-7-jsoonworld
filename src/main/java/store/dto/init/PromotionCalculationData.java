@@ -55,6 +55,23 @@ public class PromotionCalculationData {
         );
     }
 
+    public PromotionCalculationData withAdditionalPromotion(int additionalFreeItems) {
+        int newFreeItems = this.freeItems + additionalFreeItems;
+        int newTotalRequiredQuantity = this.finalQuantity + newFreeItems;
+        int newDiscountAmount = newFreeItems * this.discountAmount;
+
+        return new PromotionCalculationData(
+                this.buyQuantity,
+                this.freeQuantity,
+                this.finalQuantity,
+                newFreeItems,
+                newTotalRequiredQuantity,
+                this.promoStock,
+                newDiscountAmount
+        );
+    }
+
+
     public int getBuyQuantity() { return buyQuantity; }
     public int getFreeQuantity() { return freeQuantity; }
     public int getFinalQuantity() { return finalQuantity; }

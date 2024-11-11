@@ -1,4 +1,4 @@
-package store.service;
+package store.service.purchase;
 
 import store.controller.PromotionController;
 import store.controller.StockController;
@@ -11,6 +11,9 @@ import store.dto.response.PurchaseProcessingResult;
 import store.dto.response.StockResult;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
+import store.service.product.StockService;
+import store.service.promotion.PromotionHandler;
+import store.service.promotion.PromotionRequestCreator;
 import store.util.PurchaseDetailsFormatter;
 
 import java.util.ArrayList;

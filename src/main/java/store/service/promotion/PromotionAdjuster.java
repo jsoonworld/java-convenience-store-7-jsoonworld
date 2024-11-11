@@ -1,4 +1,4 @@
-package store.service;
+package store.service.promotion;
 
 import store.dto.init.PromotionCalculationData;
 import store.dto.request.PromotionRequest;
@@ -19,11 +19,14 @@ public class PromotionAdjuster {
     }
 
     public PromotionCalculationData handleAdditionalPurchase(PromotionRequest request, PromotionCalculationData dto) {
-        if (request.getRequestedQuantity() < dto.getBuyQuantity()) {
-            int unmetPromotionQuantity = dto.getBuyQuantity() - request.getRequestedQuantity();
+        int requestedQuantity = request.getRequestedQuantity();
+        int buyQuantity = dto.getBuyQuantity();
+
+        if (requestedQuantity >= buyQuantity) {
+            int unmetPromotionQuantity = requestedQuantity - buyQuantity;
             PromotionConfirmationInput confirmationInput;
             while (true) {
-                try{
+                try {
                     outputView.printPromotionPrompt(request.getProductName());
                     confirmationInput = inputView.readPromotionConfirmation();
                     if (CONFIRMATION_YES.equals(confirmationInput.getUserResponse())) {
@@ -36,7 +39,6 @@ public class PromotionAdjuster {
         }
         return dto;
     }
-
     private PromotionCalculationData updateWithAdditionalPurchase(PromotionCalculationData dto, PromotionRequest request, int unmetPromotionQuantity) {
         int updatedFinalQuantity = dto.getFinalQuantity() + unmetPromotionQuantity;
         int freeItems = (updatedFinalQuantity / dto.getBuyQuantity()) * dto.getFreeQuantity();

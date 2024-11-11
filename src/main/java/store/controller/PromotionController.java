@@ -4,7 +4,7 @@ import store.domain.Product;
 import store.dto.request.PromotionRequest;
 import store.dto.response.PromotionResponse;
 import store.dto.response.PromotionResult;
-import store.service.PromotionHandler;
+import store.service.promotion.PromotionHandler;
 
 import java.util.List;
 

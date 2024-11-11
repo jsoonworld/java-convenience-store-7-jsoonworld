@@ -1,4 +1,4 @@
-package store.service;
+package store.service.promotion;
 
 import store.domain.Product;
 import store.domain.vo.Price;
@@ -40,7 +40,6 @@ public class PromotionStockManager {
         int quantityToDecrease = Math.min(promoStock, totalRequiredQuantity);
         promotionalProduct = promotionalProduct.decreaseQuantity(quantityToDecrease);
         productsToSave.add(promotionalProduct);
-
         dto.getPromotionalDetails().append(String.format("%-10s\t%d\n", promotionalProduct.getName(), freeItems));
     }
 }

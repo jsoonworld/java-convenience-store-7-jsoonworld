@@ -1,4 +1,4 @@
-package store.service;
+package store.service.receipt;
 
 import store.dto.request.ReceiptRequest;
 import store.dto.response.ReceiptResponse;

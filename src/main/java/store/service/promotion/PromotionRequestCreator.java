@@ -1,4 +1,4 @@
-package store.service;
+package store.service.promotion;
 
 import static store.exception.ErrorMessage.EXCEEDS_STOCK;
 

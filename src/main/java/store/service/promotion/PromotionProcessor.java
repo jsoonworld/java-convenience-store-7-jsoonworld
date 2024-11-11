@@ -1,4 +1,4 @@
-package store.service;
+package store.service.promotion;
 
 import store.dto.init.PromotionCalculationData;
 import store.dto.request.PromotionRequest;
@@ -21,7 +21,6 @@ public class PromotionProcessor {
             return PromotionResponse.emptyResponse(request.getRequestedQuantity());
         }
 
-        // 업데이트된 DTO를 반영하도록 수정
         dto = adjuster.handleAdditionalPurchase(request, dto);
 
         PromotionStockManager.processRemainingStock(dto, request);

@@ -1,4 +1,4 @@
-package store.service;
+package store.service.discount;
 
 import store.view.InputView;
 import store.view.OutputView;

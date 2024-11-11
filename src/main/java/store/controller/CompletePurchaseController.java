@@ -1,10 +1,10 @@
 package store.controller;
 
 import store.domain.Product;
-import store.service.MembershipDiscountService;
-import store.service.ReceiptService;
-import store.service.ReceiptCalculationService;
-import store.service.ProductSaver;
+import store.service.discount.MembershipDiscountService;
+import store.service.receipt.ReceiptService;
+import store.service.receipt.ReceiptCalculationService;
+import store.service.product.ProductSaver;
 import store.view.InputView;
 import store.view.OutputView;
 import store.repository.ProductRepository;

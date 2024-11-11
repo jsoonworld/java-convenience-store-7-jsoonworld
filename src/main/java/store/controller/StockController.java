@@ -4,7 +4,7 @@ import store.domain.Product;
 import store.dto.request.StockRequest;
 import store.dto.response.StockResponse;
 import store.dto.response.StockResult;
-import store.service.StockService;
+import store.service.product.StockService;
 
 import java.util.ArrayList;
 import java.util.List;

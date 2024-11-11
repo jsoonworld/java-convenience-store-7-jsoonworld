@@ -4,8 +4,8 @@ import store.controller.ProductController;
 import store.controller.StoreController;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
-import store.service.ProductService;
-import store.service.PromotionService;
+import store.service.product.ProductService;
+import store.service.promotion.PromotionService;
 import store.view.InputView;
 import store.view.OutputView;
 
