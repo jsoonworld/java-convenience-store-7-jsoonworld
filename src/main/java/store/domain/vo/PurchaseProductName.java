@@ -44,13 +44,13 @@ public class PurchaseProductName {
 
     private void validateNameNotNull(String name) {
         if (name == null) {
-            throw new IllegalArgumentException(PRODUCT_NAME_CANNOT_BE_NULL.getMessage());
+            throw new IllegalArgumentException(NULL_PRODUCT_NAME.getMessage());
         }
     }
 
     private void validateNameNotBlank(String name) {
         if (name.isBlank()) {
-            throw new IllegalArgumentException(PRODUCT_NAME_CANNOT_BE_BLANK.getMessage());
+            throw new IllegalArgumentException(EMPTY_PRODUCT_NAME.getMessage());
         }
     }
 }

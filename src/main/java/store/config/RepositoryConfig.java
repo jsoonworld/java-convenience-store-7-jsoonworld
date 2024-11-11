@@ -2,6 +2,7 @@ package store.config;
 
 import store.domain.product.Product;
 import store.domain.promotion.Promotion;
+import store.exception.ErrorMessage;
 import store.repository.ProductRepository;
 import store.repository.PromotionRepository;
 import store.io.input.FileDataLoader;
@@ -10,6 +11,8 @@ import store.util.parser.PromotionCsvParser;
 
 import java.io.IOException;
 import java.util.List;
+
+import static store.exception.ErrorMessage.*;
 
 public class RepositoryConfig {
 
@@ -33,7 +36,7 @@ public class RepositoryConfig {
             List<Product> parsedProducts = productCsvParser.parseProducts(rawData);
             return new ProductRepository(parsedProducts);
         } catch (IOException e) {
-            throw new RuntimeException("[ERROR] 상품 데이터 초기화 오류");
+            throw new RuntimeException(PRODUCT_DATA_INITIALIZATION_ERROR.getMessage());
         }
     }
 
@@ -43,7 +46,8 @@ public class RepositoryConfig {
             List<Promotion> parsedPromotions = promotionCsvParser.parsePromotions(rawData);
             return new PromotionRepository(parsedPromotions);
         } catch (IOException e) {
-            throw new RuntimeException("[ERROR] 프로모션 데이터 초기화 오류");
+            throw new RuntimeException(PROMOTION_DATA_INITIALIZATION_ERROR.getMessage());
         }
+
     }
 }

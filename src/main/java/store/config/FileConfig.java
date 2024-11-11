@@ -1,5 +1,7 @@
 package store.config;
 
+import static store.exception.ErrorMessage.*;
+
 import store.io.input.DefaultFileDataLoader;
 import store.io.input.FileDataLoader;
 import store.util.file.FilePathLoader;
@@ -19,7 +21,7 @@ public class FileConfig {
         try {
             return filePathLoader.getFilePath("products.md");
         } catch (IOException e) {
-            throw new RuntimeException("[ERROR] 상품 파일 경로를 불러오는 중 오류가 발생했습니다.");
+            throw new RuntimeException(PRODUCT_FILE_PATH_LOAD_ERROR.getMessage());
         }
     }
 
@@ -27,9 +29,10 @@ public class FileConfig {
         try {
             return filePathLoader.getFilePath("promotions.md");
         } catch (IOException e) {
-            throw new RuntimeException("[ERROR] 프로모션 파일 경로를 불러오는 중 오류가 발생했습니다.");
+            throw new RuntimeException(PROMOTION_FILE_PATH_LOAD_ERROR.getMessage());
         }
     }
+
 
     public FileDataLoader getDataLoader() {
         return dataLoader;
