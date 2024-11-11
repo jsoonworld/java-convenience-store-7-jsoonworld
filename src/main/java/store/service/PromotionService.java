@@ -1,5 +1,8 @@
 package store.service;
 
+import static store.exception.ErrorMessage.*;
+
+import camp.nextstep.edu.missionutils.DateTimes;
 import store.domain.Promotion;
 import store.repository.PromotionRepository;
 
@@ -10,35 +13,41 @@ import java.util.Optional;
 public class PromotionService {
     private final PromotionRepository promotionRepository;
 
+    private static final String NULL_PROMOTION_NAME = "null";
+    public static final int MAX_DUPLICATE_PROMOTIONS = 1;
+
     public PromotionService(PromotionRepository promotionRepository) {
         this.promotionRepository = promotionRepository;
     }
 
-    // 유효한 단일 프로모션을 조회하며 중복 프로모션이 있을 경우 경고 메시지를 출력
     public Optional<Promotion> getValidPromotionForProduct(String promotionName) {
-        if (promotionName == null || promotionName.equalsIgnoreCase("null")) {
-            return Optional.empty();
-        }
+        return Optional.ofNullable(promotionName)
+                .filter(this::isPromotion)
+                .map(this::findValidPromotions)
+                .filter(this::hasNoDuplicatePromotions)
+                .flatMap(this::getSingleValidPromotion);
+    }
 
-        LocalDate today = LocalDate.now();
+    private boolean isPromotion(String promotionName) {
+        return !promotionName.equalsIgnoreCase(NULL_PROMOTION_NAME);
+    }
 
-        // 프로모션 이름이 일치하고 오늘 날짜에 유효한 프로모션 리스트 가져오기
-        List<Promotion> validPromotions = promotionRepository.findPromotionsByName(promotionName)
+    private List<Promotion> findValidPromotions(String promotionName) {
+        LocalDate today = LocalDate.from(DateTimes.now());
+        return promotionRepository.findPromotionsByName(promotionName)
                 .stream()
                 .filter(promo -> promo.isActiveOn(today))
                 .toList();
-
-        // 유효한 프로모션이 여러 개일 경우 중복 경고 메시지를 출력
-        if (validPromotions.size() > 1) {
-            System.out.println("[ERROR] 중복 프로모션이 감지되었습니다.");
-            return Optional.empty();
-        }
-
-        // 유효한 프로모션이 하나인 경우 해당 프로모션 반환
-        return validPromotions.isEmpty() ? Optional.empty() : Optional.of(validPromotions.get(0));
     }
 
-    public List<Promotion> findPromotionsByName(String promotionName) {
-        return promotionRepository.findPromotionsByName(promotionName);
+    private boolean hasNoDuplicatePromotions(List<Promotion> validPromotions) {
+        if (validPromotions.size() > MAX_DUPLICATE_PROMOTIONS) {
+            throw new IllegalArgumentException(DUPLICATE_PROMOTION.getMessage());
+        }
+        return true;
+    }
+
+    private Optional<Promotion> getSingleValidPromotion(List<Promotion> validPromotions) {
+        return validPromotions.stream().findFirst();
     }
 }
