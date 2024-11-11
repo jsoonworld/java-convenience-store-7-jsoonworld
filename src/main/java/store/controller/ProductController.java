@@ -1,7 +1,7 @@
 package store.controller;
 
 import store.domain.Product;
-import store.dto.PurchaseProductRequest;
+import store.dto.request.PurchaseProductRequest;
 import store.service.ProductService;
 import store.util.ProductInventoryFormatter;
 
