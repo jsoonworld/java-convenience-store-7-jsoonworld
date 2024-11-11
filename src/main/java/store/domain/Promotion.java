@@ -6,6 +6,7 @@ import store.domain.vo.FreeQuantity;
 import store.domain.vo.PromotionPeriod;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Promotion {

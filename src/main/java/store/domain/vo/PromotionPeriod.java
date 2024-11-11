@@ -3,6 +3,7 @@ package store.domain.vo;
 import static store.exception.ErrorMessage.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class PromotionPeriod {
     private final LocalDate startDate;
@@ -18,8 +19,8 @@ public class PromotionPeriod {
         return new PromotionPeriod(startDate, endDate);
     }
 
-    public boolean isWithinPeriod(LocalDate date) {
-        return !date.isBefore(startDate) && !date.isAfter(endDate);
+    public boolean isWithinPeriod(LocalDate dateTime) {
+        return !dateTime.isBefore(startDate) && !dateTime.isAfter(endDate);
     }
 
     private void validate(LocalDate startDate, LocalDate endDate) {
