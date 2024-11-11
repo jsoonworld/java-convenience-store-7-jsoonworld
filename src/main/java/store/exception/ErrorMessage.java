@@ -29,16 +29,16 @@ public enum ErrorMessage {
     PURCHASE_INPUT_CANNOT_BE_NULL("[ERROR] 구매 항목 입력값은 null일 수 없습니다."),
     PURCHASE_INPUT_CANNOT_BE_EMPTY("[ERROR] 구매 항목 입력값은 빈 값일 수 없습니다."),
 
-    ITEM_MUST_BE_IN_BRACKETS("[ERROR] 각 상품은 대괄호([])로 묶여야 합니다."),
-    ITEM_MUST_CONTAIN_NAME_AND_QUANTITY("[ERROR] 상품명과 수량은 하이픈(-)으로 구분되어야 합니다."),
-    PRODUCT_NAME_CANNOT_BE_EMPTY("[ERROR] 상품명은 비어 있을 수 없습니다."),
-    QUANTITY_CANNOT_BE_EMPTY("[ERROR] 수량은 비어 있을 수 없습니다."),
-    QUANTITY_MUST_BE_NUMERIC("[ERROR] 수량은 숫자여야 합니다."),
-    QUANTITY_MUST_BE_POSITIVE("[ERROR] 수량은 1 이상이어야 합니다."),
-    INPUT_CANNOT_START_OR_END_WITH_COMMA("[ERROR] 입력은 쉼표로 시작하거나 끝날 수 없습니다."),
-    EMPTY_ITEM_INCLUDED("[ERROR] 빈 항목이 포함되어 있습니다. 유효한 상품 정보를 입력해주세요."),
-    PRODUCT_NAME_CANNOT_BE_NULL("[ERROR] 상품명은 null일 수 없습니다."),
-    PRODUCT_NAME_CANNOT_BE_BLANK("[ERROR] 상품명은 비어있을 수 없습니다."),
+    ITEM_MUST_BE_IN_BRACKETS("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    ITEM_MUST_CONTAIN_NAME_AND_QUANTITY("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    PRODUCT_NAME_CANNOT_BE_EMPTY("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    QUANTITY_CANNOT_BE_EMPTY("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    QUANTITY_MUST_BE_NUMERIC("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    QUANTITY_MUST_BE_POSITIVE("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    INPUT_CANNOT_START_OR_END_WITH_COMMA("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    EMPTY_ITEM_INCLUDED("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    PRODUCT_NAME_CANNOT_BE_NULL("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
+    PRODUCT_NAME_CANNOT_BE_BLANK("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요."),
 
     INVALID_PROMOTION_FORMAT("[ERROR] 잘못된 프로모션 형식입니다: "),
     INVALID_INTEGER_FORMAT("[ERROR] 숫자 형식이 올바르지 않습니다: "),
@@ -47,6 +47,23 @@ public enum ErrorMessage {
     PRODUCT_DATA_INITIALIZATION_ERROR("[ERROR] 상품 데이터를 초기화하는 중 오류가 발생했습니다: "),
     PROMOTION_DATA_INITIALIZATION_ERROR("[ERROR] 프로모션 데이터를 초기화하는 중 오류가 발생했습니다."),
 
+    INSUFFICIENT_STOCK("[ERROR] 재고가 부족합니다."),
+
+    FILE_SAVE_ERROR("[ERROR] 파일 저장 중 오류가 발생했습니다."),
+
+    PRODUCT_SAVE_FAILED("[ERROR] 상품 저장에 실패 하였습니다."),
+
+    DUPLICATE_PROMOTION("[ERROR] 중복된 프로모션이 존재합니다."),
+
+    EXCEEDS_STOCK("[ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요."),
+
+    INVALID_INDEX("[ERROR] 유효하지 않은 인덱스입니다. 상품 추가 실패."),
+
+    DIVISION_BY_ZERO("[ERROR] 구매 수량이 0으로 나누어졌습니다."),
+
+    INVALID_INPUT_MESSAGE("[ERROR] 잘못된 입력입니다. 다시 입력해 주세요."),
+
+    PRODUCT_NOT_FOUND("[ERROR] 존재하지 않는 상품입니다. 다시 입력해 주세요"),
     ;
 
     private final String message;
