@@ -1,7 +1,7 @@
 package store.util;
 
-import store.dto.ReceiptRequest;
-import store.dto.ReceiptResponse;
+import store.dto.request.ReceiptRequest;
+import store.dto.response.ReceiptResponse;
 
 public class ReceiptFormatter {
 

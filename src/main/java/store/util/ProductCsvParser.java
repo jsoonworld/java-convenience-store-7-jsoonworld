@@ -6,14 +6,12 @@ import store.domain.vo.Price;
 import store.domain.vo.Quantity;
 import store.domain.vo.PromotionName;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductCsvParser {
 
-    private static final int HEADER_INDEX = 0;
     private static final int DATA_START_INDEX = 1;
     private static final int NAME_INDEX = 0;
     private static final int PRICE_INDEX = 1;
@@ -21,38 +19,15 @@ public class ProductCsvParser {
     private static final int PROMOTION_NAME_INDEX = 3;
     private static final String DEFAULT_PROMOTION_NAME = "null";
     private static final String DELIMITER = ",";
-
-    private String header;
+    private static final String NO_STOCK = "재고 없음";
+    private static final int DEFAULT_QUANTITY = 0;
 
     public List<Product> parseProducts(List<String> lines) {
-        header = extractHeader(lines);
         List<String> dataLines = extractDataLines(lines);
 
         return dataLines.stream()
                 .map(this::parseProduct)
                 .collect(Collectors.toList());
-    }
-
-    public List<String> toCsvWithHeader(List<Product> products) {
-        List<String> csvLines = new ArrayList<>();
-        csvLines.add(header);
-        csvLines.addAll(products.stream()
-                .map(this::toCsvLine)
-                .collect(Collectors.toList()));
-        return csvLines;
-    }
-
-    private String toCsvLine(Product product) {
-        String promotionName = getPromotionName(product);
-        return String.join(DELIMITER,
-                product.getName(),
-                String.valueOf(product.getPriceValue()),
-                String.valueOf(product.getQuantityValue()),
-                promotionName);
-    }
-
-    private String extractHeader(List<String> lines) {
-        return lines.get(HEADER_INDEX);
     }
 
     private List<String> extractDataLines(List<String> lines) {
@@ -69,13 +44,6 @@ public class ProductCsvParser {
         return Product.of(productName, price, quantity, promotionName);
     }
 
-    private String getPromotionName(Product product) {
-        if (product.isPromotional()) {
-            return product.getPromotionName();
-        }
-        return DEFAULT_PROMOTION_NAME;
-    }
-
     private ProductName parseName(List<String> fields) {
         return ProductName.from(fields.get(NAME_INDEX));
     }
@@ -86,15 +54,15 @@ public class ProductCsvParser {
 
     private Quantity parseQuantity(List<String> fields) {
         String quantityField = fields.get(QUANTITY_INDEX);
-        int quantityValue;
-
-        if ("재고 없음".equals(quantityField)) {
-            quantityValue = 0;
-        } else {
-            quantityValue = Integer.parseInt(quantityField);
-        }
-
+        int quantityValue = parseQuantityValue(quantityField);
         return Quantity.from(quantityValue);
+    }
+
+    private int parseQuantityValue(String quantityField) {
+        if (NO_STOCK.equals(quantityField)) {
+            return DEFAULT_QUANTITY;
+        }
+        return Integer.parseInt(quantityField);
     }
 
 

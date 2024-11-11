@@ -8,17 +8,17 @@ import java.nio.file.*;
 
 public class FilePathLoader {
 
-    public static String getFilePath(String fileName) throws IOException {
+    public String getFilePath(String fileName) throws IOException {
         return getResourceFilePath(fileName);
     }
 
-    private static String getResourceFilePath(String fileName) {
+    private String getResourceFilePath(String fileName) {
         URL resource = validateFileExists(fileName);
         return Paths.get(resource.getPath()).toString();
     }
 
-    private static URL validateFileExists(String fileName) {
-        URL resource = FilePathLoader.class.getClassLoader().getResource(fileName);
+    private URL validateFileExists(String fileName) {
+        URL resource = getClass().getClassLoader().getResource(fileName);
         if (resource == null) {
             throw new IllegalArgumentException(FILE_NOT_FOUND.getMessage());
         }
