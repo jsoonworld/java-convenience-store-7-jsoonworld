@@ -7,6 +7,7 @@ import static store.exception.ErrorMessage.NEGATIVE_PROMOTION_QUANTITY;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import store.domain.vo.promotion.RequiredPurchaseQuantity;
 
 @DisplayName("RequiredPurchaseQuantity 클래스 테스트")
 class RequiredPurchaseQuantityTest {
